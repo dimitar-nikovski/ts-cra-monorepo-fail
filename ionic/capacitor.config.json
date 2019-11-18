@@ -1,0 +1,7 @@
+{
+  "appId": "ts-cra-monorepo-fai.ionic",
+  "appName": "ts-cra-monorepo-fail",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build"
+}

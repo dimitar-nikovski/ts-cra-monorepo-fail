@@ -1,0 +1,21 @@
+{
+  "name": "ts-cra-monorepo-fail",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "app1",
+      "ionic"
+    ],
+    "nohoist": [
+      "**/webpack-dev-server",
+      "**/babel-loader",
+      "**/babel-jest"
+    ]
+  },
+  "scripts": {
+    "lerna:init": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "lerna": "^3.16.4"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "short_name": "ts-cra-monorepo-fail",
+  "name": "ts-cra-monorepo-fail",
+  "start_url": "/",
+  "orientation": "portrait",
+  // "display": "fullscreen",
+  "display": "standalone",
+  "background_color": "#F9FAFC",
+  "theme_color": "#00bbff"
+}

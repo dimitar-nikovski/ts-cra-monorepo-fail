@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "build/dist",
+    "checkJs": false,
+    "module": "esnext",
+    "target": "es2018",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "sourceMap": true,
+    "allowJs": true,
+    "suppressExcessPropertyErrors": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "strictNullChecks": false,
+    "noUnusedParameters": false,
+    "strict": false,
+    "noUnusedLocals": false,
+    "paths": {
+      "images/*": [
+        "src/images/*"
+      ],
+      "components/*": [
+        "src/components/*"
+      ]
+    },
+    "removeComments": true
+  },
+  "include": [
+    "src",
+    "App.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "config",
+    "lib",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "deprecated",
+    "jest"
+  ]
+}

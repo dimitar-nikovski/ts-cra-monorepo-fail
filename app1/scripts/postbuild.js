@@ -1,0 +1,1 @@
+console.log('post build script is empty')
