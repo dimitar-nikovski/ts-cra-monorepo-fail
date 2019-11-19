@@ -1,4 +1,5 @@
 {
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "build/dist",
@@ -36,6 +37,11 @@
     },
     "removeComments": true
   },
+  "references": [
+    {
+      "path": "../ionic"
+    }
+  ],
   "include": [
     "src",
     "App.tsx"

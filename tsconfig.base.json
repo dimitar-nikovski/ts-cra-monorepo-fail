@@ -1,0 +1,18 @@
+{
+    "include": [
+        "app1/src",
+        "ionic/src"
+    ],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "noEmitOnError": true,
+        "paths": {
+            "@app/ionic": [
+                "ionic/src"
+            ],
+            "@app/app1": [
+                "app1/src"
+            ]
+        }
+    }
+}
