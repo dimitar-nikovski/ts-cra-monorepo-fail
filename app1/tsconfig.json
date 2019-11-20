@@ -2,7 +2,7 @@
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "build/dist",
+    "outDir": "./build/dist",
     "checkJs": false,
     "module": "esnext",
     "target": "es2018",
@@ -11,12 +11,12 @@
       "dom"
     ],
     "sourceMap": true,
-    "allowJs": true,
+    // "allowJs": true,
     "suppressExcessPropertyErrors": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDir": "src",
+    "rootDir": "./src",
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "noImplicitReturns": true,
@@ -33,6 +33,9 @@
       ],
       "components/*": [
         "src/components/*"
+      ],
+      "src/*": [
+        "src/*"
       ]
     },
     "removeComments": true
@@ -43,8 +46,7 @@
     }
   ],
   "include": [
-    "src",
-    "App.tsx"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",

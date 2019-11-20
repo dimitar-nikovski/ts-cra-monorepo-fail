@@ -4,8 +4,19 @@
         "ionic/src"
     ],
     "compilerOptions": {
+        "composite": true,
+        "module": "commonjs",
+        "lib": [
+            "dom",
+            "es6",
+            "es7"
+        ],
+        "target": "es6",
         "baseUrl": ".",
+        "rootDir": ".",
+        "jsx": "react",
         "noEmitOnError": true,
+        "esModuleInterop": true,
         "paths": {
             "@app/ionic": [
                 "ionic/src"

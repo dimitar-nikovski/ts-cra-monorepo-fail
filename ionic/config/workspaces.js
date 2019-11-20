@@ -15,7 +15,7 @@ const loadPackageJson = packagePath => {
 };
 
 const getWorkspacesRootConfig = dir => {
-	const packageJsonUp = findUp.sync('package.json', {cwd: dir});
+	const packageJsonUp = findUp.sync('package.json', { cwd: dir });
 
 	if (packageJsonUp === null) {
 		return false;
@@ -24,11 +24,11 @@ const getWorkspacesRootConfig = dir => {
 	const packageObj = loadPackageJson(packageJsonUp);
 
 	if (
-        packageObj.workspaces && (
-            Array.isArray(packageObj.workspaces) ||
-            Reflect.has(packageObj.workspaces, 'packages')
-        )
-    ) {
+		packageObj.workspaces && (
+			Array.isArray(packageObj.workspaces) ||
+			Reflect.has(packageObj.workspaces, 'packages')
+		)
+	) {
 
 
 		const workspacesRootConfig = {
@@ -50,7 +50,7 @@ const getPackagePaths = (root, workspacesList) => {
 		const workspaceAbsDir = path.join(root, workspaceDir);
 		const packageJsonGlob = path.join('**!(node_modules)', 'package.json');
 		const packageJsonAbsPaths = glob
-			.sync(packageJsonGlob, {cwd: workspaceAbsDir})
+			.sync(packageJsonGlob, { cwd: workspaceAbsDir })
 			.map(pkgPath => path.join(workspaceAbsDir, pkgPath));
 
 		packageList.push(...packageJsonAbsPaths);
@@ -75,8 +75,8 @@ const getDeep = (obj, keyChain) => {
 	return false;
 };
 
-const resolveBabelLoaderPaths = ({root, workspacesList}, packageEntry) => {
-	const packageJsonPaths = getPackagePaths(root, workspacesList);
+const resolveBabelLoaderPaths = ({ root, workspacesList }, packageEntry) => {
+	const packageJsonPaths = [...new Set(getPackagePaths(root, workspacesList))];
 	const babelLoaderPaths = [];
 
 	packageJsonPaths.map(absPkgPath => {
@@ -95,7 +95,7 @@ const resolveBabelLoaderPaths = ({root, workspacesList}, packageEntry) => {
 };
 
 const loadAppSettings = appPackageJson => {
-	const result = {workspaces: {}, dependencies: {}};
+	const result = { workspaces: {}, dependencies: {} };
 
 	const appPackageObj = loadPackageJson(appPackageJson);
 
@@ -144,7 +144,7 @@ const guard = (appDirectory, appPackageJson) => {
 };
 
 const getPkg = path => {
-	const pkgPath = findUp.sync('package.json', {cwd: path});
+	const pkgPath = findUp.sync('package.json', { cwd: path });
 	const pkg = loadPackageJson(pkgPath);
 	return pkg;
 };
@@ -184,7 +184,7 @@ const buildDepsTable = srcPaths => {
 		const pkg = getPkg(path);
 		const name = pkg.name;
 		const deps = getDeps(pkg);
-		depsTable[name] = {path, deps};
+		depsTable[name] = { path, deps };
 	});
 };
 
@@ -217,7 +217,7 @@ const init = paths => {
 		production: true
 	};
 
-	const {root, workspaces} = getWorkspacesRootConfig(paths.appPath);
+	const { root, workspaces } = getWorkspacesRootConfig(paths.appPath);
 	const workspacesList = [];
 
 	// Normally "workspaces" in package.json is an array
@@ -253,7 +253,7 @@ const init = paths => {
 	}
 
 	const babelSrcPaths = resolveBabelLoaderPaths(
-		{root, workspacesList},
+		{ root, workspacesList },
 		config.packageEntry
 	);
 
@@ -266,7 +266,7 @@ const init = paths => {
 
 	console.log(
 		`Found ${babelSrcPaths.length} path(s) with "${
-			config.packageEntry
+		config.packageEntry
 		}" entry.`
 	);
 

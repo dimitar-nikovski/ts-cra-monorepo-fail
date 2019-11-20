@@ -7,6 +7,8 @@
       "dom.iterable",
       "esnext"
     ],
+    "rootDir": "../",
+    "outDir": "./build/dist",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,7 +20,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "removeComments": true,
-    "isolatedModules": true,
+    // "isolatedModules": true,
     "noEmit": true,
     "jsx": "react"
   },
@@ -27,6 +29,14 @@
       "path": "../app1"
     }
   ],
+  "paths": {
+    "src/*": [
+      "src/*"
+    ],
+    "@app/app1/*": [
+      "../app1/*"
+    ]
+  },
   "include": [
     "src",
     "../app1/src"
