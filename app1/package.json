@@ -2,6 +2,7 @@
   "name": "@app/app1",
   "version": "1.0.0",
   "private": true,
+  "main:src": "src/index",
   "dependencies": {
     "@hot-loader/react-dom": "^16.10.2",
     "@svgr/webpack": "4.1.0",
@@ -54,7 +55,7 @@
     "thread-loader": "1.2.0",
     "ts-import-plugin": "^1.5.5",
     "ts-jest": "23.10.4",
-    "ts-loader": "4.x.x",
+    "ts-loader": "^6.2.1",
     "tsconfig-paths-webpack-plugin": "^2.0.0",
     "tslint": "^5.7.0",
     "tslint-config-prettier": "^1.10.0",
@@ -73,7 +74,8 @@
   "scripts": {
     "start": "SET NODE_ENV=development & node scripts/start.js",
     "build": "SET NODE_ENV=production & node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "ts": "tsc --skipLibCheck"
   },
   "eslintConfig": {
     "extends": "react-app"
