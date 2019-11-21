@@ -75,7 +75,7 @@
     "start": "SET NODE_ENV=development & node scripts/start.js",
     "build": "SET NODE_ENV=production & node scripts/build.js",
     "test": "node scripts/test.js",
-    "ts": "tsc --skipLibCheck"
+    "ts": "tsc --skipLibCheck --emitDeclarationOnly"
   },
   "eslintConfig": {
     "extends": "react-app"
